@@ -1,9 +1,9 @@
 import { Component } from 'react';
 
-const TitleComponent = (props)=> { 
+const TitleComponent = ({name})=> { 
     return (
         <div>
-            <h1>El Juego #1 es {props.name}</h1>
+            <h1> The Last Of Us {name}</h1>
         </div>
     );
 }
