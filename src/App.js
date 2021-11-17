@@ -3,6 +3,8 @@ import NavBar from './components/navbar/navbar';
 import Catalogo from './components/catalogo/catalogo';
 import CartWidget from './components/cartwidget/cartwidget';
 import TitleComponent from './components/catalogo/title';
+//import ItemCount from './components/contador/contador';
+
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <NavBar/> 
       <Catalogo />
       <CartWidget/>
+      
     </div>
   );
 }

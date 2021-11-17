@@ -1,4 +1,4 @@
-import { Button, Container, Box, Typography} from '@mui/material';
+import { Button, Container, Box, Typography, List, ListItem} from '@mui/material';
 import {useEffect, useState } from 'react';
 import TitleComponent from './title';
 
@@ -7,30 +7,17 @@ const Catalogo = (props) => {
     const [name, setName] = useState('20$d')
     const [otroJuego, setOtroJuego] = useState('Part 1')
     const[unidad, setUnidad] = useState(1)
+    const [users, setUsers] = useState([]);
 
     useEffect(() =>{
-        console.log('Dispara useEffect inicial')
-
-        return() =>{
-            console.log('dispara return useEffect inicial')
-        }
+        const users = [
+            {id: 1, name: 'God of War'},
+            {id: 2, name: 'the last of us'},
+            {id: 3, name: 'death stranding'},
+        ]
+        setUsers(users);
     }, []);
 
-    useEffect(() =>{
-        console.log('Dispara useEffect name')
-
-        return() =>{
-            console.log('dispara return useEffect name')
-        }
-    }, [name, otroJuego]);
-
-    useEffect(() =>{
-        console.log('Dispara useEffect unidad')
-
-        return() =>{
-            console.log('dispara return useEffect unidad')
-        }
-    }, [unidad]);
          
     const updateName = () =>{
         setName('60$d')
@@ -63,9 +50,15 @@ const Catalogo = (props) => {
                 variant= 'contained'
                 size='small'
                 onClick={setUnit}>Agregar Unidad</Button>   
+                
+                <List>
+                    {users.map(({id, name}) => <ListItem key={id}> {name}</ListItem>)}
+                </List>
             </Box>
         </Container>
     );
     
 } 
+
+
 export default Catalogo;
