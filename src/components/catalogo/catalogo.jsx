@@ -6,17 +6,10 @@ import TitleComponent from './title';
 const Catalogo = (props) => {
     const [name, setName] = useState('20$d')
     const [otroJuego, setOtroJuego] = useState('Part 1')
-    const[unidad, setUnidad] = useState(1)
+    const [unidad, setUnidad] = useState(1)
     const [users, setUsers] = useState([]);
 
-    useEffect(() =>{
-        const users = [
-            {id: 1, name: 'God of War'},
-            {id: 2, name: 'the last of us'},
-            {id: 3, name: 'death stranding'},
-        ]
-        setUsers(users);
-    }, []);
+
 
          
     const updateName = () =>{

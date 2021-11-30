@@ -1,18 +1,20 @@
-/*import { SettingsCellOutlined } from "@mui/icons-material";
-import { Component } from "react"
+import { useState } from "react";
 
 const ItemCount = ({stock, initial}) =>{
+
+    const [count, setCount] = useState(initial)
 
     const addItem = () =>{
         const newValue = count + 1;
         if(newValue <= stock){
-            SettingsCellOutlined(newValue);
+            setCount(newValue);
         }
     }
+
     const quitItem = () =>{
         const newValue = count - 1;
         if(newValue >= initial){
-            SettingsCellOutlined(newValue)
+            setCount(newValue);
         }
     }
 
@@ -21,20 +23,20 @@ const ItemCount = ({stock, initial}) =>{
             alert(`Se agrego ${count} producto al carrito`);
         }
         else{
-            alert(`Se agrego ${count} productos al carrito`);
+            alert(`Se agregaron ${count} productos al carrito`);
         }
     }
 
     return(
         <>
         <div>
-            <Button onClick={addItem}>+</Button>
+            <button onClick={addItem}>+</button>
             <h2>{count}</h2>
-            <Button onClick={quitItem}>-</Button>
+            <button onClick={quitItem}>-</button>
         </div>
-        <Button onClick={onAdd}>Agregar</Button>
+        <button onClick={onAdd}>Agregar</button>
         </>
     )
 }
 
-export default ItemCount;*/
+export default ItemCount;
